@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
+ 
 :root{
     --font-family-heading: 'Roboto Mono', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family-body: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -15,7 +15,7 @@
 	--blue-600: #1E88E5;
 	--blue-700: #1976D2;
 	--blue-800: #1565C0;
-	--blue-900: #0D47A1; 
+	--blue-900: #0D47A1;
 
 	--red-50:  #FFEBEE;
 	--red-100: #FFCDD2;
@@ -39,44 +39,46 @@
     --grey-800: #424242;
     --grey-900: #212121;
 
-    --primary-color: var(--blue-500);
-    --secondary-color: var(--grey-700);
-    --accent-color: var(--red-500);
+    --shadow-2dp: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    --shadow-4dp: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.14), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    --shadow-6dp: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 18px 0 rgba(0, 0, 0, 0.14), 0 3px 5px -1px rgba(0, 0, 0, 0.12);
 
-	--tne-background: #2d2d2d;
+    /*
+        Chris Kempson's Tomorrow Night Eighties
+        https://github.com/chriskempson/tomorrow-theme#tomorrow-night-eighties
+    */
+	--tne-background:   #2d2d2d;
 	--tne-current-line: #393939;
-	--tne-selection: #515151;
-	--tne-foreground: #cccccc;
-	--tne-comment: #999999;
-	--tne-red: #f2777a;
-	--tne-orange: #f99157;
-	--tne-yellow: #ffcc66;
-	--tne-green: #99cc99;
-	--tne-aqua: #66cccc;
-	--tne-blue: #6699cc;
-	--tne-purple: #cc99cc;
-} 
-
-/* GLOBALS */ 
+	--tne-selection:    #515151;
+	--tne-foreground:   #cccccc;
+	--tne-comment:      #999999;
+	--tne-red:          #f2777a;
+	--tne-orange:       #f99157;
+	--tne-yellow:       #ffcc66;
+	--tne-green:        #99cc99;
+	--tne-aqua:         #66cccc;
+	--tne-blue:         #6699cc;
+	--tne-purple:       #cc99cc;
+}
 
 html {
     font-size: 16px !important;
 }
 
 body {
-    background-color: #FFF !important;
+    background-color: white !important;
     font-weight: normal;
     font-family: var(--font-family-body);
     color: var(--grey-900);
     overflow: inherit;
     vertical-align: middle;
 }
- 
+
 a{
 	color: var(--blue-500);
 }
 
-a:hover, 
+a:hover,
 a:focus {
     color: var(--blue-800);
 }
@@ -85,6 +87,7 @@ a:focus {
     box-shadow: none;
     -webkit-box-shadow: none;
     padding: 0;
+    padding-right: 88px;
 }
 
 .nav > li > a {
@@ -163,7 +166,8 @@ div#header-container {
 
 div#notebook {
 	border-top: none;
-    font-size: 1rem;
+	font-size: 1rem;
+	background-color: var(--grey-100);
 }
 
 .kernel_idle_icon:before {
@@ -179,7 +183,7 @@ div.input_prompt {
     font-style: normal !important;
 }
 
-div.input_prompt bdi, 
+div.input_prompt bdi,
 div.output_prompt bdi{
 	line-height: 0;
 	font-size:0;
@@ -189,14 +193,14 @@ div.output_prompt bdi{
 div.output_prompt {
     color: var(--grey-900);
 }
- 
+
 .code_cell div.input_prompt:after,
 .code_cell div.output_prompt:after {
 	display: inline-block;
     content: '';
     font-size:  0.75rem;
     font-style: normal !important;
-} 
+}
 
 div.input_area {
     border-radius: 0px;
@@ -208,6 +212,40 @@ div.output_area pre {
     font-weight: normal;
     color: var(--grey-700);
 }
+
+/*
+div.output_subarea {
+    font-weight: normal;
+    color: #828282;
+}
+*/
+
+/*
+.rendered_html pre,
+.rendered_html code {
+    color: #828282;
+}
+*/
+
+/* .rendered_html table,
+.rendered_html th,
+.rendered_html tr,
+.rendered_html td {
+    border: 1px #828282 solid;
+    font-size: 0.75rem;
+    font-family: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
+} */
+
+/* .rendered_html th,
+.rendered_html tr,
+.rendered_html td {
+    padding: 5px 10px;
+}
+ */
+/* .rendered_html th {
+    font-weight: normal;
+    background: #f8f8f8;
+} */
 
 div.output_html {
     font-size: 0.75rem;
@@ -248,7 +286,7 @@ table.dataframe tbody tr {
 }
 
 table.dataframe tbody tr th {
-	background-color: #FFF;
+	background-color: white;
 	color: var(--grey-700);
 	font-weight: 400;
 	text-align: left;
@@ -261,6 +299,55 @@ table.dataframe tbody tr td {
     padding-left: 1.0rem;
     padding-right: 1.0rem;
 }
+
+
+/* table, table.dataframe tr {
+    border: none;
+} */
+
+/* table td, table.dataframe td,
+table th, table.dataframe th {
+    margin: 0;
+    border: 1px solid white;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+} */
+
+
+/* table th:not(:empty), table.dataframe th:not(:empty) {
+    background-color: whitefff;
+    text-align: left;
+    padding: 0 10px;
+    font-style: italic
+} */
+
+
+/* table.dataframe tr:nth-child(2) th:empty, table.dataframe tr:nth-child(2) th:empty,
+table tr:nth-child(2) th:empty, table tr:nth-child(2) th:empty {
+    border-left: none;
+    border-right: 1px dotted #888;
+}
+table td, table.dataframe td {
+    background-color: white9ea;
+    color: #828282;
+    padding: 0.375em 1em;
+}
+table thead, table.dataframe thead {
+	color:  #828282;
+	padding: 10px 0;
+	font-weight: bold;
+	border-bottom: 1px solid #828282;
+}
+
+table thead th:not(:empty), table.dataframe thead th:not(:empty),
+table thead tr th, table.dataframe thead tr th {
+    background-color: #f8f8f8;
+    color: #BA5400;
+    text-align: left;
+    font-style: normal;
+    padding: 5px 10px;
+    border-bottom:  1px solid #828282;
+} */
 
 .table > thead > tr > td.info,
 .table > tbody > tr > td.info,
@@ -340,6 +427,7 @@ div.out_prompt_overlay:hover {
 	background: none;
 }
 
+
 div.cell.edit_mode {
     border-radius: 0px;
     border: thin solid #BA5400;
@@ -350,6 +438,8 @@ div.output_html {
     color: var(--grey-900);
     line-height: 1.6;
 }
+
+
 
 span.ansiblack {
     color: #828282;
@@ -380,7 +470,7 @@ span.ansiyellow {
 }
 
 div.output_stderr {
-    background-color: #FFFFFF;
+    background-color: whiteFFF;
 }
 
 div.output_stderr pre {
@@ -507,24 +597,24 @@ div.output_stderr pre {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form{
-    background-color: var(--grey-900);
+    background-color: white;
 }
 
 .navbar-default .navbar-nav > li > a{
-    color: var(--grey-50);
+    color: var(--grey-700);
 }
 
 .navbar-default .navbar-nav > li > a:hover{
 	color: var(--grey-500);
 }
 
-.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
 	color: var(--grey-500);
 }
 
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus{
 	background-color: white;
 }
@@ -538,23 +628,23 @@ div.output_stderr pre {
 }
 
 #kernel_indicator{
-    color: white;
+    color: var(--grey-700);
     line-height: 45px;
     border-left: none;
 }
 
 .notification_widget{
     z-index: 10;
-    color: var(--grey-900);
-    background-color: #FFF;
+    color: var(--grey-700);
+    background-color: var(--grey-100);
     padding: 0 12px;
     line-height: 32px !important;
     border-radius: 99px;
     position: relative;
     top: 9px;
     font-size: 12px !important;
-	border: none;
-} 
+    border: none;
+}
 
 body > #header{
     width: 100%;
@@ -564,7 +654,7 @@ body > #header{
 .fa{
   font-family: 'Material Icons';
 }
- 
+
 .fa-save:before, .fa-floppy-o:before{
     content: "save";
 }
@@ -605,7 +695,7 @@ body > #header{
 .fa-rotate-right:before, .fa-repeat:before{
     content: "repeat";
 }
- 
+
 .fa-keyboard-o:before{
     content: "keyboard";
 }
@@ -621,14 +711,14 @@ body > #header{
 .fa-refresh:before{
 	content: "refresh";
 }
- 
+
 #maintoolbar{
     min-height: auto;
     padding: 0 0 0 10px;
     margin: 0;
     height: 46px;
     line-height: 37px;
-	
+
 	position: absolute;
 	top: -50px;
 }
@@ -648,7 +738,7 @@ body > #header{
 	background-color: white;
 	color: #212121;
 }
- 
+
 div.input_area{
     background-color: var(--grey-100);
 }
@@ -698,6 +788,9 @@ div.input_area{
 }
 
 
+/*
+
+*/
 .CodeMirror-hscrollbar::-webkit-scrollbar{
 	display: none;
 }
@@ -711,8 +804,9 @@ div.input_area{
 	float: left;
 	width: 24px;
 	line-height: 56px;
-	margin: 0 10px;
+	margin: 0 10px 0 24px;
 	color: var(--blue-500);
+	px; */
 }
 
 [data-jupyter-action="jupyter-notebook:insert-cell-below"]{
@@ -728,7 +822,7 @@ div.input_area{
 	font-size: 24px !important;
     box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
 }
- 
+
 [data-jupyter-action="jupyter-notebook:insert-cell-below"]:hover{
 	background-color: var(--blue-400) !important;
 }
@@ -736,12 +830,12 @@ div.input_area{
 .notification_widget.info{
 	background-color: var(--blue-500);
 	border: none;
-} 
- 
+}
+
 .output_subarea.output_png img{
 	display: block;
 	margin: 0 auto;
-}  
+}
 
 .notebook_app #MathJax_Message{
 	background-color: var(--grey-900);
