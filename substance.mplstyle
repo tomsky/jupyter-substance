@@ -1,0 +1,66 @@
+font.family: monospace
+text.color: 212121
+
+axes.prop_cycle : cycler('color', ['2196F3', 'F44336', '4CAF50', 'FFEB3B', '9C27B0'])
+
+axes.edgecolor    : 9E9E9E
+axes.linewidth    : 0.8
+axes.titlesize    : large
+axes.titlepad     : 12.0
+axes.labelsize    : medium
+axes.labelpad     : 12.0
+axes.labelweight  : normal
+axes.labelcolor   : 212121
+axes.axisbelow    : True
+
+### GRIDS
+axes.grid      : True
+grid.color     : 9E9E9E
+grid.linestyle : solid
+grid.linewidth : 0.8
+grid.alpha     : 0.1
+
+### TICKS
+xtick.color         : 9E9E9E
+xtick.labelsize     : small
+ytick.color         : 9E9E9E
+ytick.labelsize     : small
+
+### Legend
+legend.frameon    : False
+legend.framealpha : 0.8
+legend.edgecolor  : 0.8
+legend.fancybox   : False
+legend.fontsize   : small
+
+### Boxplot
+boxplot.notch       : False
+boxplot.vertical    : True
+boxplot.whiskers    : 1.5
+boxplot.bootstrap   : None
+boxplot.patchartist : True
+boxplot.showmeans   : True
+boxplot.showcaps    : True
+boxplot.showbox     : True
+boxplot.showfliers  : True
+boxplot.meanline    : True
+
+boxplot.flierprops.marker           : o
+boxplot.flierprops.markeredgecolor  : C0
+boxplot.flierprops.markersize       : 4
+boxplot.flierprops.linewidth        : 0.8
+
+boxplot.boxprops.color         : C0
+boxplot.boxprops.linewidth     : 0.8
+
+boxplot.whiskerprops.color     : C0
+boxplot.whiskerprops.linewidth : 2.1
+
+boxplot.capprops.color         : C0
+boxplot.capprops.linewidth     : 2.1
+
+boxplot.medianprops.color      : F44336
+boxplot.medianprops.linewidth  : 0.8
+
+boxplot.meanprops.color        : FFEB3B
+boxplot.meanprops.linewidth    : 0.8

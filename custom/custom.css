@@ -38,6 +38,8 @@
     --grey-700: #616161;
     --grey-800: #424242;
     --grey-900: #212121;
+	
+	--green-500: #4CAF50;
 
     --shadow-2dp: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
     --shadow-4dp: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.14), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
@@ -47,18 +49,20 @@
         Chris Kempson's Tomorrow Night Eighties
         https://github.com/chriskempson/tomorrow-theme#tomorrow-night-eighties
     */
-	--tne-background:   #2d2d2d;
+	--tne-background:   white;
+	--tne-border: 		1px solid var(--grey-200);
 	--tne-current-line: #393939;
-	--tne-selection:    #515151;
-	--tne-foreground:   #cccccc;
-	--tne-comment:      #999999;
-	--tne-red:          #f2777a;
-	--tne-orange:       #f99157;
-	--tne-yellow:       #ffcc66;
-	--tne-green:        #99cc99;
-	--tne-aqua:         #66cccc;
-	--tne-blue:         #6699cc;
-	--tne-purple:       #cc99cc;
+	--tne-linenumber:   var(--grey-400);
+	--tne-selection:    #BBDEFB;
+	--tne-foreground:   var(--grey-900);
+	--tne-comment:      var(--grey-500);
+	--tne-red:          #F44336;
+	--tne-orange:       #FF9800;
+	--tne-yellow:       #FFEB3B;
+	--tne-green:        #4CAF50;
+	--tne-aqua:         #009688;
+	--tne-blue:         #2196F3;
+	--tne-purple:       #9C27B0;
 }
 
 html {
@@ -208,44 +212,14 @@ div.input_area {
     padding: 0px 5px;
 }
 
-div.output_area pre {
+div.output_area .output_text {
     font-weight: normal;
     color: var(--grey-700);
 }
 
-/*
-div.output_subarea {
-    font-weight: normal;
-    color: #828282;
+div.output_area .output_text pre{
+	color: inherit;
 }
-*/
-
-/*
-.rendered_html pre,
-.rendered_html code {
-    color: #828282;
-}
-*/
-
-/* .rendered_html table,
-.rendered_html th,
-.rendered_html tr,
-.rendered_html td {
-    border: 1px #828282 solid;
-    font-size: 0.75rem;
-    font-family: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
-} */
-
-/* .rendered_html th,
-.rendered_html tr,
-.rendered_html td {
-    padding: 5px 10px;
-}
- */
-/* .rendered_html th {
-    font-weight: normal;
-    background: #f8f8f8;
-} */
 
 div.output_html {
     font-size: 0.75rem;
@@ -253,39 +227,54 @@ div.output_html {
     font-family: var(--font-family-mono)
 }
 
-table.dataframe {
+.rendered_html table{
     border-collapse: collapse;
     border: none;
+    font-family: var(--font-family-mono);
 }
 
-table.dataframe thead {
+.rendered_html table thead{
 	padding-bottom: 10px;
 }
 
-table.dataframe thead tr {
+.rendered_html table thead tr{
     color: var(--grey-700);
     font-style: normal;
-    border-bottom:  1px solid var(--grey-700);
+    border-bottom: 1px solid var(--grey-400);
     vertical-align: middle;
-	text-align: center;
+    text-align: center;
 }
 
-table.dataframe thead tr th, table.dataframe thead tr:only-child th {
+.rendered_html table thead tr th,
+.rendered_html table thead tr:only-child th{
 	vertical-align: middle;
 	text-align: center;
 	font-weight: 400;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
-table.dataframe tbody {
+.rendered_html tbody{
 	padding-top:  5px;
 }
 
-
-table.dataframe tbody tr {
-
+.rendered_html table tbody tr{
+	background-color: var(--grey-50);
 }
 
-table.dataframe tbody tr th {
+.rendered_html table tbody tr:nth-child(odd){
+	background-color: var(--grey-100);
+}
+
+.rendered_html tbody tr:hover{
+	background-color: var(--blue-500) !important; 
+}
+
+.rendered_html tbody tr:hover td{
+	color: white;
+}
+
+.rendered_html table tbody tr th{
 	background-color: white;
 	color: var(--grey-700);
 	font-weight: 400;
@@ -293,75 +282,10 @@ table.dataframe tbody tr th {
 	font-style: italic;
 }
 
-table.dataframe tbody tr td {
-    background-color: var(--grey-100);
+.rendered_html table tbody tr td{
     color: var(--grey-700);
     padding-left: 1.0rem;
     padding-right: 1.0rem;
-}
-
-
-/* table, table.dataframe tr {
-    border: none;
-} */
-
-/* table td, table.dataframe td,
-table th, table.dataframe th {
-    margin: 0;
-    border: 1px solid white;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-} */
-
-
-/* table th:not(:empty), table.dataframe th:not(:empty) {
-    background-color: whitefff;
-    text-align: left;
-    padding: 0 10px;
-    font-style: italic
-} */
-
-
-/* table.dataframe tr:nth-child(2) th:empty, table.dataframe tr:nth-child(2) th:empty,
-table tr:nth-child(2) th:empty, table tr:nth-child(2) th:empty {
-    border-left: none;
-    border-right: 1px dotted #888;
-}
-table td, table.dataframe td {
-    background-color: white9ea;
-    color: #828282;
-    padding: 0.375em 1em;
-}
-table thead, table.dataframe thead {
-	color:  #828282;
-	padding: 10px 0;
-	font-weight: bold;
-	border-bottom: 1px solid #828282;
-}
-
-table thead th:not(:empty), table.dataframe thead th:not(:empty),
-table thead tr th, table.dataframe thead tr th {
-    background-color: #f8f8f8;
-    color: #BA5400;
-    text-align: left;
-    font-style: normal;
-    padding: 5px 10px;
-    border-bottom:  1px solid #828282;
-} */
-
-.table > thead > tr > td.info,
-.table > tbody > tr > td.info,
-.table > tfoot > tr > td.info,
-.table > thead > tr > th.info,
-.table > tbody > tr > th.info,
-.table > tfoot > tr > th.info,
-.table > thead > tr.info > td,
-.table > tbody > tr.info > td,
-.table > tfoot > tr.info > td,
-.table > thead > tr.info > th,
-.table > tbody > tr.info > th,
-.table > tfoot > tr.info > th {
-  background-color: #d9edf7;
 }
 
 div.cell {
@@ -380,27 +304,22 @@ div.cell.selected {
     background: none !important;
 }
 
-div.cell.selected .inner_cell {
+/*
+div.text_cell.selected.rendered .inner_cell{
 	border-right: 2px solid var(--blue-500);
 	margin-right: -2px;
 }
 
-div.cell.selected div.input:before {
-	display: inline-block;
-	position: absolute;
-    content: "\279E";
-    font-size: 0.875rem;
-    top: 16px;
-    width: 10px;
-    left: 30px;
-    color: #009489;
-    font-style: bold !important;
-}
+div.text_cell.selected .inner_cell,
+div.code_cell.selected.rendered .inner_cell {
+	border-right: 2px solid var(--green-500);
+	margin-right: -2px;
+}*/
 
-.edit_mode div.cell.selected div.input:before {
-    color: #D14187;
-}
 
+
+
+/*
 div.cell.selected:before, div.cell.selected.jupyter-soft-selected:before {
     position: absolute;
     display: none;
@@ -431,7 +350,7 @@ div.out_prompt_overlay:hover {
 div.cell.edit_mode {
     border-radius: 0px;
     border: thin solid #BA5400;
-}
+}*/
 
 div.text_cell_render,
 div.output_html {
@@ -480,6 +399,7 @@ div.output_stderr pre {
 .cm-s-ipython.CodeMirror {
     background: var(--tne-background);
     color: var(--tne-foreground);
+    border: var(--tne-border);
 }
 
 .cm-s-ipython div.CodeMirror-selected {
@@ -488,11 +408,12 @@ div.output_stderr pre {
 
 .cm-s-ipython .CodeMirror-gutters {
     background: var(--tne-background);
-    border-right: 0px;
+    border-right: var(--tne-border);
+    padding-right: 5px;
 }
 
 .cm-s-ipython .CodeMirror-linenumber {
-    color: var(--tne-selection);
+    color: var(--tne-linenumber);
 }
 
 .cm-s-ipython .CodeMirror-cursor {
@@ -538,11 +459,11 @@ div.output_stderr pre {
 }
 
 .cm-s-ipython span.cm-variable {
-    color: white;
+    color: var(--tne-foreground);
 }
 
 .cm-s-ipython span.cm-variable-2 {
-    color: #007ad0;
+    color: var(--tne-aqua);
 }
 
 .cm-s-ipython span.cm-def {
@@ -631,6 +552,7 @@ div.output_stderr pre {
     color: var(--grey-700);
     line-height: 45px;
     border-left: none;
+    margin-right: 24px
 }
 
 .notification_widget{
@@ -745,6 +667,7 @@ div.input_area{
 
 .code_cell div.input_area{
 	background-color: var(--tne-background);
+	padding-right: 0;
 }
 
 #ipython-main-app{
@@ -821,6 +744,7 @@ div.input_area{
 	border-radius: 50%;
 	font-size: 24px !important;
     box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    outline: none !important;
 }
 
 [data-jupyter-action="jupyter-notebook:insert-cell-below"]:hover{
@@ -844,4 +768,25 @@ div.input_area{
 	font-size: 14px;
 	padding: 12px 24px;
 	bottom: 0;
+}
+
+.command_mode .modal_indicator:before,
+.edit_mode .modal_indicator:before{
+	font-family: "Material Icons";
+	font-size: 18px;
+	line-height: 45px;
+	width: 18px;
+}
+
+.edit_mode .modal_indicator:before{
+	content: "mode_edit" !important;
+}
+
+.command_mode .modal_indicator:before{
+	content: "book" !important;	
+}
+
+div.cell.selected:before, 
+div.cell.selected.jupyter-soft-selected:before{
+	background: #42A5F5;
 }
