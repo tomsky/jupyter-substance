@@ -634,6 +634,14 @@ body > #header{
 	content: "refresh";
 }
 
+.fa-chevron-up:before{
+	content: "visibility";
+}
+
+.fa-list:before{
+	content: "list"
+}
+
 #maintoolbar{
     min-height: auto;
     padding: 0 0 0 10px;
@@ -751,6 +759,76 @@ div.input_area{
 	background-color: var(--blue-400) !important;
 }
 
+[data-jupyter-action="jupyter-notebook:move-cell-up"],
+[data-jupyter-action="jupyter-notebook:move-cell-down"]{
+	position: fixed !important;
+	display: block;
+	right: 32px;
+	width: 40px !important;
+	height: 40px !important;
+	background-color: var(--blue-300);
+	color: white !important;
+	font-size: 24px !important;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    outline: none !important;
+}
+
+[data-jupyter-action="jupyter-notebook:move-cell-up"]{
+	bottom: 132px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50% !important;
+}
+
+[data-jupyter-action="jupyter-notebook:move-cell-down"]{
+	bottom: 92px;
+	border-bottom-left-radius: 50% !important;
+	border-bottom-right-radius: 50% !important;
+
+}
+
+[data-jupyter-action="jupyter-notebook:move-cell-up"]:hover,
+[data-jupyter-action="jupyter-notebook:move-cell-down"]:hover{
+	background-color: var(--blue-300) !important;
+}
+
+[data-jupyter-action="hide_input:toggle-cell-input-display"]{
+	position: fixed !important;
+	display: block;
+	right: 32px;
+	bottom: 184px;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50% !important;
+	background-color: var(--blue-500);
+	color: white !important;
+	font-size: 24px !important;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    outline: none !important;
+}
+
+[data-jupyter-action="hide_input:toggle-cell-input-display"]:hover{
+	background-color: var(--blue-400) !important;
+}
+
+[data-jupyter-action="toc2:toggle-toc"]{
+	position: fixed !important;
+	display: block;
+	right: 32px;
+	bottom: 236px;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50% !important;
+	background-color: var(--blue-500);
+	color: white !important;
+	font-size: 24px !important;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    outline: none !important;	
+}
+
+[data-jupyter-action="toc2:toggle-toc"]:hover{
+	background-color: var(--blue-400) !important;
+}
+
 .notification_widget.info{
 	background-color: var(--blue-500);
 	border: none;
@@ -789,4 +867,22 @@ div.input_area{
 div.cell.selected:before, 
 div.cell.selected.jupyter-soft-selected:before{
 	background: #42A5F5;
+}
+
+/* nbextensions */
+
+.nbext-selector > nav > .nav > li > a > .nbext-enable-toggle:before{
+	content: "check_box_outline_blank" !important;
+}
+
+.nbext-selector > nav > .nav > li > a > .nbext-enabled:before{
+	content: "check_box" !important
+}
+
+.nbext-selector > nav > .nav > li.disabled > a > .nbext-enable-toggle:before{
+	content: "block" !important
+}
+
+.nbext-selector > nav > .nav > li.disabled > a > .nbext-enabled:before{
+	content: "error_outline" !important;
 }
