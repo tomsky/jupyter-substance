@@ -639,7 +639,23 @@ body > #header{
 }
 
 .fa-list:before{
-	content: "list"
+	content: "toc"
+}
+
+.fa-crosshairs:before{
+	content: "code"
+}
+
+.fa-cog:before{
+	content: "settings"
+}
+
+.fa-caret-down:before{
+	content: "expand_more"
+}
+
+.fa-caret-right:before{
+	content: "chevron_right"
 }
 
 #maintoolbar{
@@ -759,6 +775,10 @@ div.input_area{
 	background-color: var(--blue-400) !important;
 }
 
+[data-jupyter-action="jupyter-notebook:insert-cell-below"]:active{
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
 [data-jupyter-action="jupyter-notebook:move-cell-up"],
 [data-jupyter-action="jupyter-notebook:move-cell-down"]{
 	position: fixed !important;
@@ -766,7 +786,7 @@ div.input_area{
 	right: 32px;
 	width: 40px !important;
 	height: 40px !important;
-	background-color: var(--blue-300);
+	background-color: var(--blue-500); 
 	color: white !important;
 	font-size: 24px !important;
     box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
@@ -821,11 +841,55 @@ div.input_area{
 	background-color: var(--blue-500);
 	color: white !important;
 	font-size: 24px !important;
-    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24) !important;
     outline: none !important;	
 }
 
-[data-jupyter-action="toc2:toggle-toc"]:hover{
+[data-jupyter-action="toc2:toggle-toc"]:hover,
+[data-jupyter-action="toc2:toggle-toc"]:active,
+[data-jupyter-action="toc2:toggle-toc"]:focus{
+	background-color: var(--blue-400) !important;
+}
+
+.active[data-jupyter-action="toc2:toggle-toc"]{
+	background-color: var(--blue-400) !important;
+}
+
+[data-jupyter-action="varInspector:toggle-variable-inspector"]{
+	position: fixed !important;
+	display: block;
+	right: 32px;
+	bottom: 288px;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50% !important;
+	background-color: var(--blue-500);
+	color: white !important;
+	font-size: 24px !important;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24) !important;
+    outline: none !important;	
+}
+
+[data-jupyter-action="varInspector:toggle-variable-inspector"]:hover{
+	background-color: var(--blue-400) !important;
+}
+
+[data-jupyter-action="jupyter-notebook:show-command-palette"]{
+	position: fixed !important;
+	display: block;
+	right: 32px;
+	bottom: 340px;
+	width: 40px !important;
+	height: 40px !important;
+	border-radius: 50% !important;
+	background-color: var(--blue-500);
+	color: white !important;
+	font-size: 24px !important;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24) !important;
+    outline: none !important;	
+}
+
+[data-jupyter-action="jupyter-notebook:show-command-palette"]:hover{
 	background-color: var(--blue-400) !important;
 }
 
@@ -885,4 +949,108 @@ div.cell.selected.jupyter-soft-selected:before{
 
 .nbext-selector > nav > .nav > li.disabled > a > .nbext-enabled:before{
 	content: "error_outline" !important;
+}
+
+/* TOC2 */
+
+#toc-wrapper{
+	background-color: transparent !important;
+	padding-top: 24px !important;
+	/*padding: 24px !important;*/
+}
+
+.sidebar-wrapper{
+	border: none !important;
+}
+
+#toc-header{
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+#toc-header span{
+	font-family: var(--font-family-heading);
+	font-size: 20px;
+}
+
+#toc-header .fa{
+	font-size: 18px !important;
+	float: right;
+	position: relative;
+	top: 5px;
+	color: var(--grey-500);
+}
+
+.toc-item li{
+	line-height: 1.8;
+	font-size: 14px;
+}
+
+.toc-item-num{
+	font-family: var(--font-family-body) !important;
+	color: var(--grey-500) !important;
+}
+
+.toc-item .fa-fw:first-child{
+	display: none;
+}
+
+.toc-item li > span{
+	border-left: solid 4px transparent !important;
+}
+
+.toc-item li > span a{
+	padding: 6px 10px;
+	display: block;
+}
+
+#toc li > span:hover{
+	background-color: var(--grey-300) !important;
+}
+
+.toc-item li > span.highlight_on_scroll{
+	border-color: var(--blue-500) !important; 
+}
+
+.toc-item-highlight-select{
+	background-color: var(--blue-500) !important; 
+	color: white !important;
+}
+
+.toc-item-highlight-select .toc-item-num{
+	color: inherit !important;
+}
+
+#toc-wrapper .ui-icon{
+	background-image: none;
+	width: 18px;
+	height: 18px;
+	font-family: 'Material Icons';
+}
+
+#toc-wrapper .ui-icon:before{
+	content: 'drag_handle';
+	display: block;
+	font-family: 'Material Icons';
+	font-size: 18px !important;
+	text-indent: 0;
+	width: 18px;
+	height: 18px;
+	color: var(--grey-500);
+	line-height: 18px;
+	transform: rotate(90deg);
+}
+
+#toc-wrapper .sidebar-wrapper .ui-resizable-e{
+	top: calc(50% - 9px);
+}
+
+/* */
+
+#varInspector-wrapper{
+	box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	border: none;
+	opacity: 1;
+	padding: 24px;
 }
