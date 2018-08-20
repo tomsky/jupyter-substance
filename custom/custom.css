@@ -658,6 +658,14 @@ body > #header{
 	content: "chevron_right"
 }
 
+.run_this_cell{
+	height: 24px;
+}
+
+.run_this_cell .fa-step-forward{
+	color: var(--grey-500);
+}
+
 #maintoolbar{
     min-height: auto;
     padding: 0 0 0 10px;
