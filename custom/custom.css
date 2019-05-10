@@ -89,9 +89,8 @@ a:focus {
 
 #notebook-container {
     box-shadow: none;
-    -webkit-box-shadow: none;
-    padding: 0;
-    padding-right: 88px;
+    padding: 0 24px 0 0;
+    padding-right: 88px0
 }
 
 .nav > li > a {
@@ -99,7 +98,7 @@ a:focus {
 }
 
 div.output_wrapper {
-    margin-top: 8px;
+    margin-top: 0;
 }
 
 code,
@@ -149,7 +148,7 @@ h6 {
 
 h5{
 	font-style: normal !important;
-}
+}0
 
 .prompt {
     font-family: var(--font-family-mono);
@@ -183,7 +182,7 @@ div#notebook {
 }
 
 div.input_prompt {
-    color: var(--grey-500);
+    color: var(--grey-400);
     font-style: normal !important;
 }
 
@@ -289,7 +288,8 @@ div.output_html {
 }
 
 div.cell {
-	padding: 12px 0px 5px 0px;
+	margin: 12px 0 5px 0;
+	padding: 0;
 	right: 2px;
 	border:  none;
 }
@@ -570,7 +570,8 @@ div.output_stderr pre {
 
 body > #header{
     width: 100%;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12) !important;
+	/*box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12) !important;*/
+	box-shadow: 2px 4px 10px rgba(0,0,0,.2) !important;
 }
 
 .fa{
@@ -663,7 +664,10 @@ body > #header{
 }
 
 .run_this_cell .fa-step-forward{
-	color: var(--grey-500);
+	color: var(--grey-400);
+	top: 4px;
+	left: 5px;
+	position: relative;
 }
 
 #maintoolbar{
@@ -938,9 +942,15 @@ div.input_area{
 	content: "book" !important;
 }
 
-div.cell.selected:before,
+.command_mode div.cell.selected:before,
 div.cell.selected.jupyter-soft-selected:before{
-	background: #42A5F5;
+	background: var(--blue-400);
+	left: -3px;
+}
+
+.edit_mode div.cell.selected:before{
+	background: var(--green-500);
+	left: -3px;	
 }
 
 /* nbextensions */
@@ -1101,4 +1111,170 @@ div.cell.selected.jupyter-soft-selected:before{
 
 .ctb_global_show .ctb_show{
 
+}
+
+.out_prompt_overlay{
+	padding: 0 !important;
+	left: 2px;
+	border-radius: 0;
+}
+
+.out_prompt_overlay:hover{
+	box-shadow: none !important;
+	/*border-top: 1px solid var(--grey-200);*/
+	/*border-left: 1px solid var(--grey-500);*/
+	/*border-bottom: 1px solid var(--grey-200);*/
+	background-color: white !important;
+
+}
+
+div.output_scroll{
+	box-shadow: inset 0 0 4px 2px rgba(0,0,0,.12), 0 0 2px 1px rgba(0,0,0,.24);
+}
+
+div.input_prompt{
+	min-width: 100px;
+	border: none !important;
+}
+
+.output_area .prompt{
+	min-width: 90px;
+}
+
+div.output_stderr{
+	background-color: var(--red-100) !important;
+}
+
+.notification_widget.warning{
+	text-transform: capitalize;
+	background-color: #ff9800;
+	color: var(--grey-900)
+}
+
+.nav-tabs{
+	margin-bottom: 24px !important;
+}
+
+.nav-tabs > li > a{
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+	font-size: 14px;
+	color: var(--grey-700);
+}
+
+.nav-tabs > li > a:hover{
+	border-color: transparent;
+}
+
+.nav-tabs > li > a:hover, 
+.nav-tabs > li > a:focus{
+	background-color: transparent;
+	color: inherit;
+}
+
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus{
+	border: inherit;
+	color: var(--grey-900);
+}
+
+.nav-tabs > li.active > a:after{
+	content: " ";
+	display: block;
+	background-color: var(--blue-500);
+	width: 100%;
+	height: 3px;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+}
+
+.list_header > div, 
+.list_item > div{
+	line-height: 44px;
+	padding: 0 24px 0 0 !important;
+}
+
+.list_container{
+	box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24) !important;
+	border: none;
+}
+
+input[type="checkbox"]{
+	-webkit-appearance: none;
+	cursor:pointer;
+	width: 24px;
+	height: 24px;
+	font-family: 'Material Icons';
+  	font-feature-settings: 'liga';
+	font-size: 24px !important;
+	position: relative;
+	color: var(--grey-700);
+}
+
+input[type="checkbox"]:before, 
+input[type="checkbox"]:checked:before{
+	position: absolute;
+	top: 2px;
+	left: 3px;
+}
+
+input[type="checkbox"]:before{
+	content: "check_box_outline_blank";  
+}
+
+input[type="checkbox"]:checked:before {
+	content: "check_box";  
+	color: var(--blue-500);
+}
+
+.list_header > div input, 
+.list_item > div input{
+	margin: 0;
+	top: 5px;
+	margin-left: 12px;
+	margin-right: 6px
+}
+
+.list_header > div .item_link, 
+.list_item > div .item_link{
+	color: var(--grey-700);
+}
+
+.folder_icon:before{
+	font-family: 'Material Icons';
+  	font-feature-settings: 'liga';
+  	content: "folder";
+  	font-size: 24px;
+  	top: 9px;
+  	position: relative;
+}
+
+.file_icon:before{
+	font-family: 'Material Icons';
+  	font-feature-settings: 'liga';
+  	content: "insert_drive_file";
+  	font-size: 24px;
+  	top: 9px;
+  	position: relative;
+}
+
+.notebook_icon:before{
+	font-family: 'Material Icons';
+  	font-feature-settings: 'liga';
+  	content: "assessment";
+  	font-size: 24px;
+  	top: 9px;
+  	position: relative;
+}
+
+.running_notebook_icon:before{
+	font-family: 'Material Icons';
+  	font-feature-settings: 'liga';
+  	content: "assessment";
+  	font-size: 24px;
+  	top: 9px;
+  	position: relative;
 }
